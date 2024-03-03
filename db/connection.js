@@ -1,6 +1,5 @@
-
 const mongoose=require("mongoose");
-
+require("dotenv").config();
 mongoose.set('strictQuery', false);                  
 // mongoose.connect("mongodb://127.0.0.1/foodOrdering").then(()=> {
 //     console.log("db has connected successfully ")
@@ -9,7 +8,7 @@ mongoose.set('strictQuery', false);
 // });
   
 // cloud connect                                
-mongoose.connect('mongodb+srv://ravikumar87070rk:88740rK@cluster0.yokcqlo.mongodb.net/foodorder?retryWrites=true&w=majority&appName=Cluster0').then(()=> {
+mongoose.connect(process.env.DATABASE).then(()=> {
     console.log("db has connected successfully with mongoDB ")
     }).catch((err)=> {
          console.log("error occured")
